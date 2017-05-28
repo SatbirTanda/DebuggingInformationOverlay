@@ -5,6 +5,8 @@ DebuggingInformationOverlay_FILES = SSTRootListController.m
 DebuggingInformationOverlay_INSTALL_PATH = /Library/PreferenceBundles
 DebuggingInformationOverlay_FRAMEWORKS = UIKit
 DebuggingInformationOverlay_PRIVATE_FRAMEWORKS = Preferences
+DebuggingInformationOverlay_LIBRARIES = applist
+DebuggingInformationOverlay_CFLAGS = "-Wno-error"
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

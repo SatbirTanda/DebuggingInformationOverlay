@@ -1,7 +1,12 @@
+ARCHS = armv7 armv7s arm64
+
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = DebuggingInformationOverlay
 DebuggingInformationOverlay_FILES = Tweak.xm
+DebuggingInformationOverlay_FRAMEWORKS = UIKit
+DebuggingInformationOverlay_LIBRARIES = applist
+DebuggingInformationOverlay_CFLAGS = "-Wno-error"
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
