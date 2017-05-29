@@ -2,25 +2,15 @@
 
 #define PLIST_FILENAME @"/var/mobile/Library/Preferences/com.sst1337.DebuggingInformationOverlay.plist"
 
-@interface UIApplication
-- (void)showUIDebuggingInformationOverlay;
-@end
-
 %group iOS10
 %hook UIApplication //  Hook to selected Apps
 
-%new
-- (void)showDebuggingInformationOverlay
+- (void)init 
 {
     id debuggingInformationOverlay = NSClassFromString(@"UIDebuggingInformationOverlay");
     [debuggingInformationOverlay performSelector: NSSelectorFromString(@"prepareDebuggingOverlay")];
     id debuggingInformationOverlayWindow = [debuggingInformationOverlay performSelector: NSSelectorFromString(@"overlay")];
     [debuggingInformationOverlayWindow performSelector: NSSelectorFromString(@"toggleVisibility")];
-}
-
-- (void)init 
-{
-
     return %orig;
 }
 
