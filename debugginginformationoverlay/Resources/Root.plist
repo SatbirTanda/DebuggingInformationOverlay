@@ -121,6 +121,14 @@
 			<string>© 2017 sst1337</string>
 		</dict>
 
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Artwork by Madebyoliver</string>
+		</dict>
+
 	</array>
 	<key>title</key>
 	<string>DebuggingInformationOverlay</string>
