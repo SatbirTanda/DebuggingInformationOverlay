@@ -2,30 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>title</key>
-	<string>NoAnnoyance</string>
 	<key>items</key>
 	<array>
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>headerCellClass</key>
-			<string>NoAnnoyanceHeader</string>
-		</dict>
-		<dict>
-			<key>default</key>
-			<true/>
-			<key>key</key>
-			<string>GloballyEnabled</string>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>PostNotification</key>
-			<string>com.pNre.noannoyance/settingsupdated</string>
 			<key>label</key>
-			<string>Block alerts in every app</string>
-			<key>defaults</key>
-			<string>com.pNre.noannoyance</string>
+			<string>General</string>
 		</dict>
+
 		<dict>
 			<key>isController</key>
 			<true/>
@@ -34,29 +20,15 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>label</key>
-			<string>Only block in...</string>
+			<string>Enabled Applications</string>
 			<key>ALSettingsPath</key>
-			<string>/var/mobile/Library/Preferences/com.pNre.noannoyance.plist</string>
-			<key>ALSettingsKeyPrefix</key>
-			<string>EnabledApps-</string>
+			<string>/var/mobile/Library/Preferences/com.sst1337.DebuggingInformationOverlay.plist</string>
 			<key>ALChangeNotification</key>
-			<string>com.pNre.noannoyance/settingsupdated</string>
+			<string>com.sst1337.DebuggingInformationOverlay/settingsupdated</string>
 			<key>ALAllowsSelection</key>
 			<string>1</string>
 			<key>ALSectionDescriptors</key>
 			<array>
-				<dict>
-					<key>title</key>
-					<string>System Applications</string>
-					<key>predicate</key>
-					<string>isSystemApplication = TRUE</string>
-					<key>cell-class-name</key>
-					<string>ALSwitchCell</string>
-					<key>icon-size</key>
-					<string>29</string>
-					<key>suppress-hidden-apps</key>
-					<string>1</string>
-				</dict>
 				<dict>
 					<key>title</key>
 					<string>User Applications</string>
@@ -69,125 +41,88 @@
 					<key>suppress-hidden-apps</key>
 					<string>1</string>
 				</dict>
+				<dict>
+					<key>title</key>
+					<string>System Applications</string>
+					<key>predicate</key>
+					<string>isSystemApplication = TRUE</string>
+					<key>cell-class-name</key>
+					<string>ALSwitchCell</string>
+					<key>icon-size</key>
+					<string>29</string>
+					<key>suppress-hidden-apps</key>
+					<string>1</string>
+				</dict>
 			</array>
 		</dict>
+
 		<dict>
 			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>When in fullscreen</string>
-		</dict>
-		<dict>
+			<string>PSSwitchCell</string>
 			<key>default</key>
 			<false/>
-			<key>key</key>
-			<string>GloballyEnabledInFullScreen</string>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>PostNotification</key>
-			<string>com.pNre.noannoyance/settingsupdated</string>
-			<key>label</key>
-			<string>Block alerts in every app</string>
 			<key>defaults</key>
-			<string>com.pNre.noannoyance</string>
-		</dict>
-		<dict>
-			<key>isController</key>
-			<true/>
-			<key>bundle</key>
-			<string>AppList</string>
-			<key>cell</key>
-			<string>PSLinkCell</string>
+			<string>com.sst1337.DebuggingInformationOverlay</string>
+			<key>key</key>
+			<string>EnableOnSpringBoard</string>
 			<key>label</key>
-			<string>Only block in...</string>
-			<key>ALSettingsPath</key>
-			<string>/var/mobile/Library/Preferences/com.pNre.noannoyance.plist</string>
-			<key>ALSettingsKeyPrefix</key>
-			<string>EnabledAppsInFullscreen-</string>
-			<key>ALChangeNotification</key>
-			<string>com.pNre.noannoyance/settingsupdated</string>
-			<key>ALAllowsSelection</key>
-			<string>1</string>
-			<key>ALSectionDescriptors</key>
-			<array>
-				<dict>
-					<key>title</key>
-					<string>System Applications</string>
-					<key>predicate</key>
-					<string>isSystemApplication = TRUE</string>
-					<key>cell-class-name</key>
-					<string>ALSwitchCell</string>
-					<key>icon-size</key>
-					<string>29</string>
-					<key>suppress-hidden-apps</key>
-					<string>1</string>
-				</dict>
-				<dict>
-					<key>title</key>
-					<string>User Applications</string>
-					<key>predicate</key>
-					<string>isSystemApplication = FALSE</string>
-					<key>cell-class-name</key>
-					<string>ALSwitchCell</string>
-					<key>icon-size</key>
-					<string>29</string>
-					<key>suppress-hidden-apps</key>
-					<string>1</string>
-				</dict>
-			</array>
+			<string>Enabled on SpringBoard</string>
 		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Disabled alerts</string>
-		</dict>
-		<dict>
-			<key>isController</key>
-			<true/>
-			<key>cell</key>
-			<string>PSLinkCell</string>
-			<key>label</key>
-			<string>SpringBoard</string>
-			<key>detail</key>
-			<string>NoAnnoyanceSBSettingsListController</string>
-		</dict>
-		<dict>
-			<key>isController</key>
-			<true/>
-			<key>cell</key>
-			<string>PSLinkCell</string>
-			<key>label</key>
-			<string>Mail</string>
-			<key>detail</key>
-			<string>NoAnnoyanceMLSettingsListController</string>
-		</dict>
-		<dict>
-			<key>isController</key>
-			<true/>
-			<key>cell</key>
-			<string>PSLinkCell</string>
-			<key>label</key>
-			<string>Game Center</string>
-			<key>detail</key>
-			<string>NoAnnoyanceGCSettingsListController</string>
-		</dict>
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>NoAnnoyance (http://repo.pnre.co)</string>
-			<key>isStaticText</key>
-			<true/>
+			<string>Respring to apply changes to SpringBoard</string>
 		</dict>
 		<dict>
 			<key>action</key>
-			<string>twitter</string>
+			<string>respring</string>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Twitter @_pNre</string>
+			<string>Respring</string>
 		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Support</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>linkToMyTwitter</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Developer (@sst1337) on Twitter</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>More Information</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>linkToBlog</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>© 2017 sst1337</string>
+		</dict>
+
 	</array>
+	<key>title</key>
+	<string>DebuggingInformationOverlay</string>
 </dict>
 </plist>
